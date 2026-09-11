@@ -1,0 +1,15 @@
+name = "spark_diff"
+description = "SPARK sequence diff and exact apply with a proved roundtrip"
+version = "0.1.0-dev"
+authors = ["Johannes Kanig"]
+maintainers = ["Johannes Kanig <johannes.kanig@gmail.com>"]
+maintainers-logins = ["kanigsson"]
+licenses = "Apache-2.0"
+tags = ["spark", "diff", "verification"]
+project-files = ["spark_diff.gpr"]
+
+[[depends-on]]
+gnat = ">=12 & <2000"
+
+[configuration]
+disabled = true

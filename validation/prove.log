@@ -1,0 +1,808 @@
+[Ada Data_Rep]    spark_diffs.adb
+[Ada Global_Gen]  spark_diffs.adb
+[Ada Analysis]    spark_diffs.adb
+ info: range check proved
+--> spark_diffs.adb:3:07
+
+ info: length check proved
+--> spark_diffs.adb:3:48
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:7:33
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:7:33
+
+ info: index check proved
+--> spark_diffs.adb:7:40
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:8:33
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:8:33
+
+ info: range check proved
+--> spark_diffs.adb:8:39
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:10:13
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:10:13
+
+ info: overflow check proved
+--> spark_diffs.adb:10:39
+
+ info: index check proved
+--> spark_diffs.adb:11:18
+
+ info: index check proved
+--> spark_diffs.adb:12:31
+
+ info: index check proved
+--> spark_diffs.adb:13:20
+
+ info: index check proved
+--> spark_diffs.adb:14:32
+
+ info: index check proved
+--> spark_diffs.adb:14:42
+
+ info: index check proved
+--> spark_diffs.adb:14:52
+
+ info: overflow check proved
+--> spark_diffs.adb:17:18
+
+ info: index check proved
+--> spark_diffs.adb:17:18
+
+ info: index check proved
+--> spark_diffs.adb:17:69
+
+ info: overflow check proved
+--> spark_diffs.adb:19:20
+
+ info: aspect Always_Terminates on "Unique" has been proved, subprogram will terminate
+--> spark_diffs.adb:25:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:26:18
+
+ info: postcondition proved
+--> spark_diffs.adb:28:14
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:33:33
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:33:33
+
+ info: index check proved
+--> spark_diffs.adb:33:40
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:34:33
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:34:33
+
+ info: range check proved
+--> spark_diffs.adb:34:39
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:35:33
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:35:33
+
+ info: index check proved
+--> spark_diffs.adb:35:59
+
+ info: index check proved
+--> spark_diffs.adb:35:67
+
+ info: overflow check proved
+--> spark_diffs.adb:37:20
+
+ info: range check proved
+--> spark_diffs.adb:46:40
+
+ info: initialization of "X" proved
+--> spark_diffs.adb:49:07
+
+ info: initialization of "Y" proved
+--> spark_diffs.adb:49:10
+
+ info: initialization of "Previous_X" proved
+--> spark_diffs.adb:49:13
+
+ info: initialization of "Previous_Y" proved
+--> spark_diffs.adb:49:25
+
+ info: initialization of "Previous_K" proved
+--> spark_diffs.adb:49:37
+
+ info: initialization of "K" proved
+--> spark_diffs.adb:50:07
+
+ info: range check proved
+--> spark_diffs.adb:54:50
+
+ info: postcondition proved
+--> spark_diffs.adb:55:17
+
+ info: overflow check proved
+--> spark_diffs.adb:55:33
+
+ info: index check proved
+--> spark_diffs.adb:56:23
+
+ info: index check proved
+--> spark_diffs.adb:57:54
+
+ info: index check proved
+--> spark_diffs.adb:57:66
+
+ info: overflow check proved
+--> spark_diffs.adb:60:23
+
+ info: index check proved
+--> spark_diffs.adb:61:13
+
+ info: length check proved
+--> spark_diffs.adb:64:09
+
+ info: length check proved
+--> spark_diffs.adb:65:12
+
+ info: range check proved
+--> spark_diffs.adb:65:15
+
+ info: range check proved
+--> spark_diffs.adb:65:26
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:69:33
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:69:33
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:71:13
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:71:13
+
+ info: index check proved
+--> spark_diffs.adb:73:24
+
+ info: index check proved
+--> spark_diffs.adb:73:29
+
+ info: range check proved
+--> spark_diffs.adb:73:44
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:76:36
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:76:36
+
+ info: loop variant proved
+--> spark_diffs.adb:77:34
+
+ info: overflow check proved
+--> spark_diffs.adb:77:49
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:78:36
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:78:36
+
+ info: overflow check proved
+--> spark_diffs.adb:78:49
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:80:16
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:80:16
+
+ info: index check proved
+--> spark_diffs.adb:82:27
+
+ info: index check proved
+--> spark_diffs.adb:82:32
+
+ info: range check proved
+--> spark_diffs.adb:82:47
+
+ info: index check proved
+--> spark_diffs.adb:87:43
+
+ info: overflow check proved
+--> spark_diffs.adb:87:50
+
+ info: index check proved
+--> spark_diffs.adb:87:50
+
+ info: index check proved
+--> spark_diffs.adb:88:35
+
+ info: overflow check proved
+--> spark_diffs.adb:88:42
+
+ info: index check proved
+--> spark_diffs.adb:88:42
+
+ info: range check proved
+--> spark_diffs.adb:88:50
+
+ info: index check proved
+--> spark_diffs.adb:90:32
+
+ info: overflow check proved
+--> spark_diffs.adb:90:39
+
+ info: index check proved
+--> spark_diffs.adb:90:39
+
+ info: overflow check proved
+--> spark_diffs.adb:90:44
+
+ info: index check proved
+--> spark_diffs.adb:92:42
+
+ info: overflow check proved
+--> spark_diffs.adb:92:49
+
+ info: index check proved
+--> spark_diffs.adb:92:49
+
+ info: index check proved
+--> spark_diffs.adb:93:35
+
+ info: overflow check proved
+--> spark_diffs.adb:93:42
+
+ info: index check proved
+--> spark_diffs.adb:93:42
+
+ info: index check proved
+--> spark_diffs.adb:95:32
+
+ info: overflow check proved
+--> spark_diffs.adb:95:39
+
+ info: index check proved
+--> spark_diffs.adb:95:39
+
+ info: overflow check proved
+--> spark_diffs.adb:98:20
+
+ info: range check proved
+--> spark_diffs.adb:99:43
+
+ info: range check proved
+--> spark_diffs.adb:100:27
+
+ info: range check proved
+--> spark_diffs.adb:100:49
+
+ info: overflow check proved
+--> spark_diffs.adb:101:32
+
+ info: index check proved
+--> spark_diffs.adb:101:32
+
+ info: overflow check proved
+--> spark_diffs.adb:101:44
+
+ info: index check proved
+--> spark_diffs.adb:101:44
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:103:42
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:103:42
+
+ info: range check proved
+--> spark_diffs.adb:103:53
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:104:42
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:104:42
+
+ info: range check proved
+--> spark_diffs.adb:104:53
+
+ info: loop variant proved
+--> spark_diffs.adb:105:40
+
+ info: range check proved
+--> spark_diffs.adb:105:54
+
+ info: overflow check proved
+--> spark_diffs.adb:105:62
+
+ info: overflow check proved
+--> spark_diffs.adb:106:26
+
+ info: overflow check proved
+--> spark_diffs.adb:107:26
+
+ info: index check proved
+--> spark_diffs.adb:109:22
+
+ info: index check proved
+--> spark_diffs.adb:109:25
+
+ info: range check proved
+--> spark_diffs.adb:110:24
+
+ info: range check proved
+--> spark_diffs.adb:110:46
+
+ info: overflow check proved
+--> spark_diffs.adb:116:20
+
+ info: range check proved
+--> spark_diffs.adb:122:16
+
+ info: range check proved
+--> spark_diffs.adb:123:16
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:125:36
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:125:36
+
+ info: range check proved
+--> spark_diffs.adb:125:47
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:126:36
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:126:36
+
+ info: range check proved
+--> spark_diffs.adb:126:47
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:127:36
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:127:36
+
+ info: range check proved
+--> spark_diffs.adb:127:45
+
+ info: overflow check proved
+--> spark_diffs.adb:128:20
+
+ info: index check proved
+--> spark_diffs.adb:136:43
+
+ info: overflow check proved
+--> spark_diffs.adb:136:50
+
+ info: index check proved
+--> spark_diffs.adb:136:50
+
+ info: index check proved
+--> spark_diffs.adb:136:65
+
+ info: overflow check proved
+--> spark_diffs.adb:136:72
+
+ info: index check proved
+--> spark_diffs.adb:136:72
+
+ info: overflow check proved
+--> spark_diffs.adb:138:35
+
+ info: overflow check proved
+--> spark_diffs.adb:140:35
+
+ info: index check proved
+--> spark_diffs.adb:142:38
+
+ info: index check proved
+--> spark_diffs.adb:142:43
+
+ info: overflow check proved
+--> spark_diffs.adb:143:41
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:147:39
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:147:39
+
+ info: range check proved
+--> spark_diffs.adb:147:50
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:148:39
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:148:39
+
+ info: range check proved
+--> spark_diffs.adb:148:50
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:149:39
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:149:39
+
+ info: range check proved
+--> spark_diffs.adb:149:48
+
+ info: loop variant proved
+--> spark_diffs.adb:150:37
+
+ info: range check proved
+--> spark_diffs.adb:151:34
+
+ info: overflow check proved
+--> spark_diffs.adb:152:23
+
+ info: overflow check proved
+--> spark_diffs.adb:153:23
+
+ info: precondition proved
+--> spark_diffs.adb:154:16
+
+ info: range check proved
+--> spark_diffs.adb:154:28
+
+ info: range check proved
+--> spark_diffs.adb:154:31
+
+ info: overflow check proved
+--> spark_diffs.adb:154:39
+
+ info: index check proved
+--> spark_diffs.adb:154:39
+
+ info: range check proved
+--> spark_diffs.adb:156:31
+
+ info: overflow check proved
+--> spark_diffs.adb:159:26
+
+ info: precondition proved
+--> spark_diffs.adb:160:19
+
+ info: range check proved
+--> spark_diffs.adb:160:33
+
+ info: range check proved
+--> spark_diffs.adb:160:36
+
+ info: overflow check proved
+--> spark_diffs.adb:160:44
+
+ info: index check proved
+--> spark_diffs.adb:160:44
+
+ info: overflow check proved
+--> spark_diffs.adb:162:26
+
+ info: precondition proved
+--> spark_diffs.adb:163:19
+
+ info: range check proved
+--> spark_diffs.adb:163:33
+
+ info: range check proved
+--> spark_diffs.adb:163:36
+
+ info: overflow check proved
+--> spark_diffs.adb:163:44
+
+ info: index check proved
+--> spark_diffs.adb:163:44
+
+ info: division check proved
+--> spark_diffs.adb:167:29
+
+ info: index check proved
+--> spark_diffs.adb:169:40
+
+ info: index check proved
+--> spark_diffs.adb:171:19
+
+ info: overflow check proved
+--> spark_diffs.adb:171:37
+
+ info: index check proved
+--> spark_diffs.adb:171:37
+
+ info: overflow check proved
+--> spark_diffs.adb:172:28
+
+ info: index check proved
+--> spark_diffs.adb:172:28
+
+ info: range check proved
+--> spark_diffs.adb:176:42
+
+ info: range check proved
+--> spark_diffs.adb:180:22
+
+ info: overflow check proved
+--> spark_diffs.adb:181:36
+
+ info: range check proved
+--> spark_diffs.adb:181:36
+
+ info: index check proved
+--> spark_diffs.adb:181:47
+
+ info: range check proved
+--> spark_diffs.adb:183:35
+
+ info: overflow check proved
+--> spark_diffs.adb:183:46
+
+ info: range check proved
+--> spark_diffs.adb:183:49
+
+ info: overflow check proved
+--> spark_diffs.adb:183:57
+
+ info: range check proved
+--> spark_diffs.adb:183:57
+
+ info: overflow check proved
+--> spark_diffs.adb:183:67
+
+ info: index check proved
+--> spark_diffs.adb:183:67
+
+ info: range check proved
+--> spark_diffs.adb:183:70
+
+ info: loop invariant initialization proved
+--> spark_diffs.adb:186:16
+
+ info: loop invariant preservation proved
+--> spark_diffs.adb:186:16
+
+ info: index check proved
+--> spark_diffs.adb:187:21
+
+ info: range check proved
+--> spark_diffs.adb:187:36
+
+ info: range check proved
+--> spark_diffs.adb:187:60
+
+ info: index check proved
+--> spark_diffs.adb:187:71
+
+ info: range check proved
+--> spark_diffs.adb:188:42
+
+ info: overflow check proved
+--> spark_diffs.adb:188:53
+
+ info: range check proved
+--> spark_diffs.adb:188:56
+
+ info: range check proved
+--> spark_diffs.adb:188:64
+
+ info: overflow check proved
+--> spark_diffs.adb:188:74
+
+ info: index check proved
+--> spark_diffs.adb:188:74
+
+ info: range check proved
+--> spark_diffs.adb:188:77
+
+ info: range check proved
+--> spark_diffs.adb:190:19
+
+ info: assertion proved
+--> spark_diffs.adb:191:25
+
+ info: range check proved
+--> spark_diffs.adb:191:35
+
+ info: assertion proved
+--> spark_diffs.adb:193:22
+
+ info: range check proved
+--> spark_diffs.adb:193:39
+
+ info: precondition proved
+--> spark_diffs.adb:195:07
+
+ info: precondition proved
+--> spark_diffs.adb:195:21
+
+ info: range check proved
+--> spark_diffs.adb:195:28
+
+ info: range check proved
+--> spark_diffs.adb:195:47
+
+ info: implicit aspect Always_Terminates on "Source_After" has been proved, subprogram will terminate
+--> spark_diffs.ads:16:13
+
+ info: overflow check proved
+--> spark_diffs.ads:17:16
+
+ info: range check proved
+--> spark_diffs.ads:17:16
+
+ info: implicit aspect Always_Terminates on "Target_After" has been proved, subprogram will terminate
+--> spark_diffs.ads:18:13
+
+ info: overflow check proved
+--> spark_diffs.ads:19:16
+
+ info: range check proved
+--> spark_diffs.ads:19:16
+
+ info: implicit aspect Always_Terminates on "Output_Length" has been proved, subprogram will terminate
+--> spark_diffs.ads:20:13
+
+ info: index check proved
+--> spark_diffs.ads:21:53
+
+ info: implicit aspect Always_Terminates on "Valid" has been proved, subprogram will terminate
+--> spark_diffs.ads:25:13
+
+ info: index check proved
+--> spark_diffs.ads:29:12
+
+ info: index check proved
+--> spark_diffs.ads:29:38
+
+ info: index check proved
+--> spark_diffs.ads:30:36
+
+ info: range check proved
+--> spark_diffs.ads:30:47
+
+ info: index check proved
+--> spark_diffs.ads:32:12
+
+ info: range check proved
+--> spark_diffs.ads:32:26
+
+ info: index check proved
+--> spark_diffs.ads:33:25
+
+ info: index check proved
+--> spark_diffs.ads:34:14
+
+ info: range check proved
+--> spark_diffs.ads:34:27
+
+ info: index check proved
+--> spark_diffs.ads:35:23
+
+ info: index check proved
+--> spark_diffs.ads:35:40
+
+ info: index check proved
+--> spark_diffs.ads:35:50
+
+ info: index check proved
+--> spark_diffs.ads:36:35
+
+ info: index check proved
+--> spark_diffs.ads:37:25
+
+ info: index check proved
+--> spark_diffs.ads:37:51
+
+ info: index check proved
+--> spark_diffs.ads:39:28
+
+ info: overflow check proved
+--> spark_diffs.ads:39:39
+
+ info: index check proved
+--> spark_diffs.ads:39:39
+
+ info: index check proved
+--> spark_diffs.ads:40:37
+
+ info: overflow check proved
+--> spark_diffs.ads:40:48
+
+ info: index check proved
+--> spark_diffs.ads:40:48
+
+ info: implicit aspect Always_Terminates on "Describes" has been proved, subprogram will terminate
+--> spark_diffs.ads:42:13
+
+ info: range check proved
+--> spark_diffs.ads:44:17
+
+ info: index check proved
+--> spark_diffs.ads:46:12
+
+ info: range check proved
+--> spark_diffs.ads:46:26
+
+ info: index check proved
+--> spark_diffs.ads:47:25
+
+ info: index check proved
+--> spark_diffs.ads:48:14
+
+ info: range check proved
+--> spark_diffs.ads:48:27
+
+ info: index check proved
+--> spark_diffs.ads:49:23
+
+ info: index check proved
+--> spark_diffs.ads:49:40
+
+ info: index check proved
+--> spark_diffs.ads:49:50
+
+ info: implicit aspect Always_Terminates on "Apply" has been proved, subprogram will terminate
+--> spark_diffs.ads:51:13
+
+ info: data dependencies proved
+--> spark_diffs.ads:52:11
+
+ info: postcondition proved
+--> spark_diffs.ads:53:14
+
+ info: aspect Always_Terminates on "Diff" has been proved, subprogram will terminate
+--> spark_diffs.ads:60:14
+
+ info: initialization of "Work" proved
+--> spark_diffs.ads:61:24
+
+ info: initialization of "S" proved
+--> spark_diffs.ads:62:07
+
+ info: initialization of "Last" proved
+--> spark_diffs.ads:62:23
+
+ info: initialization of "Minimal" proved
+--> spark_diffs.ads:62:43
+
+ info: data dependencies proved
+--> spark_diffs.ads:63:11
+
+ info: overflow check proved
+--> spark_diffs.ads:68:34
+
+ info: postcondition proved
+--> spark_diffs.ads:70:14
+
+ info: range check proved
+--> spark_diffs.ads:70:23
+
+ info: range check proved
+--> spark_diffs.ads:71:34
+
+ info: precondition proved
+--> spark_diffs.ads:72:17
+
+ info: range check proved
+--> spark_diffs.ads:72:24
+Success: all checks proved (270 checks).
+Summary logged in /home/kanig/tools/spark_diff/obj/release/library/gnatprove/gnatprove.out

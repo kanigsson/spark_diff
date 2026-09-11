@@ -1,0 +1,8 @@
+/obj/
+/lib/
+/bin/
+/proof/
+/alire/
+__pycache__/
+
+/validation/development/

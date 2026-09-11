@@ -1,0 +1,67 @@
+gnatprove -P spark_diff.gpr --mode=flow -j4
+[Ada Global_Gen]  spark_diffs.adb
+[Ada Analysis]    spark_diffs.adb
+ info: aspect Always_Terminates on "Unique" has been proved, subprogram will terminate
+--> spark_diffs.adb:25:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:26:18
+
+ info: initialization of "X" proved
+--> spark_diffs.adb:49:07
+
+ info: initialization of "Y" proved
+--> spark_diffs.adb:49:10
+
+ info: initialization of "Previous_X" proved
+--> spark_diffs.adb:49:13
+
+ info: initialization of "Previous_Y" proved
+--> spark_diffs.adb:49:25
+
+ info: initialization of "Previous_K" proved
+--> spark_diffs.adb:49:37
+
+ info: initialization of "K" proved
+--> spark_diffs.adb:50:07
+
+ info: implicit aspect Always_Terminates on "Source_After" has been proved, subprogram will terminate
+--> spark_diffs.ads:16:13
+
+ info: implicit aspect Always_Terminates on "Target_After" has been proved, subprogram will terminate
+--> spark_diffs.ads:18:13
+
+ info: implicit aspect Always_Terminates on "Output_Length" has been proved, subprogram will terminate
+--> spark_diffs.ads:20:13
+
+ info: implicit aspect Always_Terminates on "Valid" has been proved, subprogram will terminate
+--> spark_diffs.ads:25:13
+
+ info: implicit aspect Always_Terminates on "Describes" has been proved, subprogram will terminate
+--> spark_diffs.ads:42:13
+
+ info: implicit aspect Always_Terminates on "Apply" has been proved, subprogram will terminate
+--> spark_diffs.ads:51:13
+
+ info: data dependencies proved
+--> spark_diffs.ads:52:11
+
+ info: aspect Always_Terminates on "Diff" has been proved, subprogram will terminate
+--> spark_diffs.ads:60:14
+
+ info: initialization of "Work" proved
+--> spark_diffs.ads:61:24
+
+ info: initialization of "S" proved
+--> spark_diffs.ads:62:07
+
+ info: initialization of "Last" proved
+--> spark_diffs.ads:62:23
+
+ info: initialization of "Minimal" proved
+--> spark_diffs.ads:62:43
+
+ info: data dependencies proved
+--> spark_diffs.ads:63:11
+Success: all checks proved (21 checks).
+Summary logged in /home/kanig/tools/spark_diff/obj/release/library/gnatprove/gnatprove.out
