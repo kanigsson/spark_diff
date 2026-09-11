@@ -213,6 +213,7 @@ package body Spark_Diffs with SPARK_Mode is
       X, Y, Previous_X, Previous_Y, Previous_K : Integer;
       K : Integer;
       Used : Natural := 0;
+      Usable : Boolean;
 
       procedure Push (Kind : Edit_Kind; Src, Dst : Count; V : Symbol)
         with Pre => S'First = 1 and then Used < S'Length,
@@ -337,13 +338,15 @@ package body Spark_Diffs with SPARK_Mode is
             end;
          end loop;
       end if;
-      if Found and then Describes (A, B, S (1 .. Used))
-        and then Edit_Cost (S (1 .. Used)) <= Budget
-      then
+      --  Certification gates the Minimal claim only. A reconstructed script
+      --  that validates is kept even when no certificate is obtained; the
+      --  fallback is reserved for a search that produced nothing usable.
+      Usable := Found and then Describes (A, B, S (1 .. Used));
+      if Usable and then Edit_Cost (S (1 .. Used)) <= Budget then
          Complete_Certificate (A, B, Work, Edit_Cost (S (1 .. Used)));
          Minimal := Lower_Bound (A, B, Work, Edit_Cost (S (1 .. Used)));
       end if;
-      if not Minimal then
+      if not Usable then
          for I in S'Range loop
             if I <= A'Length then
                S (I) := (Delete, I - 1, 0, A (I));
