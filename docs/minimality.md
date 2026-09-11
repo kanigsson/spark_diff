@@ -66,8 +66,10 @@ After traceback, `Complete_Certificate` augments these cells using clipped
 predecessor bounds and extends matching runs where needed. Existing closed
 cells already covering their bounds are retained. The existing workspace is
 reused, and the resulting certificate is checked before `Minimal` can become
-true. If validation fails, the normal whole-sequence fallback still has its
-proved roundtrip property.
+true. Validation gates only that claim: a script the candidate check already
+accepted is returned either way, and the whole-sequence fallback is reserved
+for a search that produced no acceptable candidate. Both retain the proved
+roundtrip property.
 
 Certificate generation is proved free of runtime errors and terminating; its
 success for every within-budget optimum is **not** a proved postcondition.

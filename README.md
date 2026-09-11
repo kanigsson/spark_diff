@@ -82,13 +82,14 @@ trace and worst-case `O((|A| + |B|) * (Budget + 1) + Budget²)` work. The CLI's
 default budget is 256 (about 0.5 MiB of trace storage). Every candidate script
 is checked by `Describes` before acceptance. Exhaustion or a rejected candidate
 produces all deletions followed by all insertions, with the same proved
-roundtrip. Before accepting a candidate, the library completes and checks an
+roundtrip. Having accepted a candidate, the library completes and checks an
 upper-frontier certificate excluding every cheaper path. `Minimal = True` therefore certifies
 shortest-edit optimality. This adds a scan of the workspace and checks `O(D²)`
 certificate cells, with additional matching-run traversal at clipped boundaries.
-It uses the existing workspace. A rejected certificate also triggers fallback. A fallback may produce a
-large diff and may itself happen to be shortest; `Minimal = False` makes no
-optimality claim.
+It uses the existing workspace. A rejected certificate does not trigger fallback:
+the accepted script is returned unchanged, and only the optimality claim is
+withheld. A fallback may produce a large diff and may itself happen to be
+shortest; `Minimal = False` makes no optimality claim.
 
 `Lemma_Minimal (A, B, S, Alternative, W)` is the public ghost theorem. Given two
 scripts that satisfy `Describes` and the certificate guaranteed by `Diff` when
