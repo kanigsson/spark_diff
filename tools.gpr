@@ -11,6 +11,11 @@ project Tools is
       for Executable ("spark_diff_cli.adb") use "spark-diff";
    end Builder;
    package Compiler is
+      case Spark_Diff.Build is
+         when "release" =>
+            for Local_Configuration_Pragmas use "config/release.adc";
+         when "checks" => null;
+      end case;
       for Default_Switches ("Ada") use ("-gnat2022", "-O2", "-gnatwa", "-gnata");
    end Compiler;
 end Tools;

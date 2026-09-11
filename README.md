@@ -9,7 +9,9 @@ Apply (S (1 .. Last), A) = B
 
 Here `S` and `Last` are the outputs of `Diff (A, B, ...)`. The theorem covers
 both successful bounded Myers searches and the whole-sequence replacement used
-when the distance budget is exhausted. There is no patch executable.
+when the distance budget is exhausted. When `Minimal` is true, a second proved
+theorem establishes that no valid script for the same inputs has fewer
+insertions and deletions. There is no patch executable.
 
 ## Build and use
 
@@ -60,9 +62,10 @@ pragma Assert (Apply (S (1 .. Last), A) = B);
 All arrays use a lower bound of one, including empty arrays. The workspace has
 rows `0 .. Budget` and columns `-Budget .. Budget`. Input lengths are at most
 `Max_Length`; the output script buffer has exactly `A'Length + B'Length` slots.
-Only `S (1 .. Last)` is the script. Workspace contents are scratch output and
-need no initialization. No I/O, access types, or explicit heap allocation occur
-in the library. `Apply` returns an array whose result storage is managed by the
+Only `S (1 .. Last)` is the script. Workspace contents need no initialization.
+When `Minimal` is true, the workspace retains the checked lower-bound certificate
+used by the minimality theorem. No I/O, access types, or explicit heap allocation
+occur in the library. `Apply` returns an array whose result storage is managed by the
 Ada caller/runtime; the CLI allocates large search buffers on the heap.
 
 Each `Keep`, `Delete`, or `Insert` includes the consumed source/output counts
@@ -79,9 +82,27 @@ trace and worst-case `O((|A| + |B|) * (Budget + 1) + Budget²)` work. The CLI's
 default budget is 256 (about 0.5 MiB of trace storage). Every candidate script
 is checked by `Describes` before acceptance. Exhaustion or a rejected candidate
 produces all deletions followed by all insertions, with the same proved
-roundtrip. `Minimal` reports acceptance of the Myers candidate; shortest-edit
-optimality is tested against an independent dynamic-programming oracle, **not
-formally proved**. A fallback may produce a large diff.
+roundtrip. Before accepting a candidate, the library completes and checks an
+upper-frontier certificate excluding every cheaper path. `Minimal = True` therefore certifies
+shortest-edit optimality. This adds a scan of the workspace and checks `O(D²)`
+certificate cells, with additional matching-run traversal at clipped boundaries.
+It uses the existing workspace. A rejected certificate also triggers fallback. A fallback may produce a
+large diff and may itself happen to be shortest; `Minimal = False` makes no
+optimality claim.
+
+`Lemma_Minimal (A, B, S, Alternative, W)` is the public ghost theorem. Given two
+scripts that satisfy `Describes` and the certificate guaranteed by `Diff` when
+`Minimal` is true, it proves:
+
+```ada
+Edit_Cost (S) <= Edit_Cost (Alternative)
+```
+
+`Alternative` is arbitrary; it need not come from this implementation. Keeps
+cost zero, and each insertion or deletion costs one. See
+[docs/minimality.md](docs/minimality.md) for the proof argument. The separate
+claim that every optimum within the budget produces `Minimal = True` remains
+tested against an independent dynamic-programming oracle, not formally proved.
 
 ## Verification
 
@@ -98,8 +119,13 @@ defines legal complete scripts. `Describes` relates each emitted symbol to the
 target. Executable `Apply` proves that its result satisfies that relation; the
 ghost `Unique` lemma proves that two results described by the same script are
 equal. `Diff` uses this lemma to prove the actual `Apply` roundtrip postcondition.
-There are no assumed lemmas, imported axioms, suppressed proof checks, or
-unproved bodies in the library.
+The minimality proof inducts over an arbitrary competing script and shows that
+every prefix costing less than the certified bound stays behind its frontier.
+The target is excluded from all those frontiers, so the competitor cannot be
+cheaper. There are no assumed lemmas, imported axioms, suppressed proof checks,
+or unproved bodies in the library. Proof-context annotations keep quantified
+certificate definitions opaque where only their contracts are needed; each
+supporting lemma is proved.
 
 The line interner, file I/O, option handling, and unified renderer in `cli/` are
 outside SPARK. Tests cover their byte fidelity by applying generated diffs with

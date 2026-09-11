@@ -1,0 +1,2 @@
+--  Match the release library: ghost bodies are erased there too.
+pragma Assertion_Policy (Ghost => Ignore, Post => Ignore);

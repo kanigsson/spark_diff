@@ -7,23 +7,56 @@ gnatprove -P spark_diff.gpr --mode=flow -j4
  info: data dependencies proved
 --> spark_diffs.adb:26:18
 
+ info: aspect Always_Terminates on "Certificate_Facts" has been proved, subprogram will terminate
+--> spark_diffs.adb:58:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:60:18
+
+ info: aspect Always_Terminates on "Get_Cell" has been proved, subprogram will terminate
+--> spark_diffs.adb:72:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:74:18
+
+ info: aspect Always_Terminates on "Lemma_Lower_Bound" has been proved, subprogram will terminate
+--> spark_diffs.adb:83:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:85:18
+
+ info: aspect Always_Terminates on "Complete_Certificate" has been proved, subprogram will terminate
+--> spark_diffs.adb:152:14
+
+ info: data dependencies proved
+--> spark_diffs.adb:154:11
+
  info: initialization of "X" proved
---> spark_diffs.adb:49:07
+--> spark_diffs.adb:161:07
 
  info: initialization of "Y" proved
---> spark_diffs.adb:49:10
+--> spark_diffs.adb:161:10
+
+ info: initialization of "Candidate" proved
+--> spark_diffs.adb:161:13
+
+ info: initialization of "X" proved
+--> spark_diffs.adb:213:07
+
+ info: initialization of "Y" proved
+--> spark_diffs.adb:213:10
 
  info: initialization of "Previous_X" proved
---> spark_diffs.adb:49:13
+--> spark_diffs.adb:213:13
 
  info: initialization of "Previous_Y" proved
---> spark_diffs.adb:49:25
+--> spark_diffs.adb:213:25
 
  info: initialization of "Previous_K" proved
---> spark_diffs.adb:49:37
+--> spark_diffs.adb:213:37
 
  info: initialization of "K" proved
---> spark_diffs.adb:50:07
+--> spark_diffs.adb:214:07
 
  info: implicit aspect Always_Terminates on "Source_After" has been proved, subprogram will terminate
 --> spark_diffs.ads:16:13
@@ -46,22 +79,61 @@ gnatprove -P spark_diff.gpr --mode=flow -j4
  info: data dependencies proved
 --> spark_diffs.ads:52:11
 
- info: aspect Always_Terminates on "Diff" has been proved, subprogram will terminate
---> spark_diffs.ads:60:14
-
- info: initialization of "Work" proved
---> spark_diffs.ads:61:24
-
- info: initialization of "S" proved
---> spark_diffs.ads:62:07
-
- info: initialization of "Last" proved
---> spark_diffs.ads:62:23
-
- info: initialization of "Minimal" proved
---> spark_diffs.ads:62:43
+ info: implicit aspect Always_Terminates on "Prefix_Cost" has been proved, subprogram will terminate
+--> spark_diffs.ads:60:13
 
  info: data dependencies proved
---> spark_diffs.ads:63:11
-Success: all checks proved (21 checks).
+--> spark_diffs.ads:61:18
+
+ info: implicit aspect Always_Terminates on "Edit_Cost" has been proved, subprogram will terminate
+--> spark_diffs.ads:65:13
+
+ info: data dependencies proved
+--> spark_diffs.ads:66:11
+
+ info: implicit aspect Always_Terminates on "Workspace_Shape" has been proved, subprogram will terminate
+--> spark_diffs.ads:71:13
+
+ info: implicit aspect Always_Terminates on "Frontier_Values" has been proved, subprogram will terminate
+--> spark_diffs.ads:74:13
+
+ info: implicit aspect Always_Terminates on "Delete_Bound" has been proved, subprogram will terminate
+--> spark_diffs.ads:80:13
+
+ info: implicit aspect Always_Terminates on "Insert_Bound" has been proved, subprogram will terminate
+--> spark_diffs.ads:83:13
+
+ info: implicit aspect Always_Terminates on "Closed" has been proved, subprogram will terminate
+--> spark_diffs.ads:87:13
+
+ info: implicit aspect Always_Terminates on "Certificate_Cell" has been proved, subprogram will terminate
+--> spark_diffs.ads:96:13
+
+ info: implicit aspect Always_Terminates on "Lower_Bound" has been proved, subprogram will terminate
+--> spark_diffs.ads:115:13
+
+ info: aspect Always_Terminates on "Lemma_Minimal" has been proved, subprogram will terminate
+--> spark_diffs.ads:126:14
+
+ info: data dependencies proved
+--> spark_diffs.ads:128:18
+
+ info: aspect Always_Terminates on "Diff" has been proved, subprogram will terminate
+--> spark_diffs.ads:133:14
+
+ info: initialization of "Work" proved
+--> spark_diffs.ads:134:24
+
+ info: initialization of "S" proved
+--> spark_diffs.ads:135:07
+
+ info: initialization of "Last" proved
+--> spark_diffs.ads:135:23
+
+ info: initialization of "Minimal" proved
+--> spark_diffs.ads:135:43
+
+ info: data dependencies proved
+--> spark_diffs.ads:136:11
+Success: all checks proved (45 checks).
 Summary logged in /home/kanig/tools/spark_diff/obj/release/library/gnatprove/gnatprove.out

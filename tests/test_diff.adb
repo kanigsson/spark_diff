@@ -46,6 +46,9 @@ procedure Test_Diff is
       Check (Valid (A, S (1 .. Last)));
       Check (Apply (S (1 .. Last), A) = B);
       Check (Minimal = (Expected <= Budget));
+      if Minimal then
+         Check (Lower_Bound (A, B, W, Edit_Cost (S (1 .. Last))));
+      end if;
       --  Sequential replay without the production validator or Apply.
       for E of S (1 .. Last) loop
          Check (E.Source = X and E.Target = Y);
@@ -83,6 +86,39 @@ procedure Test_Diff is
       return S;
    end Decode;
 
+   procedure All_Alternatives (A, B : Sequence) is
+      Budget : constant Natural := A'Length + B'Length;
+      W : Workspace (0 .. Budget, -Budget .. Budget);
+      Best, Other : Script (1 .. Budget);
+      Last : Natural;
+      Minimal : Boolean;
+      procedure Visit (X, Y, Used : Natural) is
+      begin
+         if X = A'Length and Y = B'Length then
+            Check (Describes (A, B, Other (1 .. Used)));
+            Lemma_Minimal (A, B, Best (1 .. Last), Other (1 .. Used), W);
+            Check (Edit_Cost (Best (1 .. Last)) <= Edit_Cost (Other (1 .. Used)));
+            return;
+         end if;
+         if X < A'Length and then Y < B'Length and then A (X + 1) = B (Y + 1) then
+            Other (Used + 1) := (Keep, X, Y, A (X + 1));
+            Visit (X + 1, Y + 1, Used + 1);
+         end if;
+         if X < A'Length then
+            Other (Used + 1) := (Delete, X, Y, A (X + 1));
+            Visit (X + 1, Y, Used + 1);
+         end if;
+         if Y < B'Length then
+            Other (Used + 1) := (Insert, X, Y, B (Y + 1));
+            Visit (X, Y + 1, Used + 1);
+         end if;
+      end Visit;
+   begin
+      Diff (A, B, W, Best, Last, Minimal);
+      Check (Minimal);
+      Visit (0, 0, 0);
+   end All_Alternatives;
+
    subtype Draw is Natural range 0 .. 1000;
    package Randoms is new Ada.Numerics.Discrete_Random (Draw);
    Gen : Randoms.Generator;
@@ -98,6 +134,34 @@ begin
          end loop;
       end loop;
    end loop;
+   for N in 0 .. 2 loop
+      for M in 0 .. 2 loop
+         for AC in 0 .. 3 ** N - 1 loop
+            for BC in 0 .. 3 ** M - 1 loop
+               All_Alternatives (Decode (N, AC), Decode (M, BC));
+            end loop;
+         end loop;
+      end loop;
+   end loop;
+   declare
+      A : constant Sequence := [1];
+      B : constant Sequence := [2];
+      W : Workspace (0 .. 2, -2 .. 2);
+      S : Script (1 .. 2);
+      Last : Natural;
+      Minimal : Boolean;
+   begin
+      Diff (A, B, W, S, Last, Minimal);
+      Check (Minimal and Lower_Bound (A, B, W, 2));
+      Check (not Lower_Bound (A, A, W, 1)); -- matching snake is not closed
+      Check (not Lower_Bound (A, B, W, 3)); -- certificate too small
+      W (0, 0) := -1;
+      Check (not Lower_Bound (A, B, W, 2)); -- missing origin
+      W (0, 0) := 1;
+      Check (not Lower_Bound (A, B, W, 2)); -- target reached too early
+      W (0, 0) := Integer'Last;
+      Check (not Lower_Bound (A, B, W, 2)); -- malformed bound, no overflow
+   end;
    Randoms.Reset (Gen, 20260911);
    for Iteration in 1 .. 1000 loop
       declare

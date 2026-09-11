@@ -1,13 +1,12 @@
 gprbuild -P tools.gpr -j4
 [Ada Compile]     spark_diffs.adb
-[Ada Compile]     diff_text.adb
 [Archive]         libspark_diff.a
 [Library-Files-Copy] Spark_Diff
+[Ada Bind]        spark_diff_cli
 [Ada Bind]        test_diff
 [Link]            test_diff
-[Ada Bind]        spark_diff_cli
 [Link]            spark-diff
 bin/test_diff
-PASS: 119734 cases, 2379537 checks
+PASS: 119734 cases, 2448265 checks
 python3 tests/test_cli.py
 PASS: 3363 CLI checks (GNU patch and git apply roundtrips)
