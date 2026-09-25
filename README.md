@@ -1,5 +1,10 @@
 # spark-diff
 
+> **This repository has moved.** Development continues in
+> [kanigsson/spark-world](https://github.com/kanigsson/spark-world), under
+> [`apps/spark_diff/`](https://github.com/kanigsson/spark-world/tree/main/apps/spark_diff).
+> This repository is no longer maintained.
+
 A SPARK sequence diff and exact apply library, with an ordinary Ada CLI for
 line-oriented unified diffs. The library proves the roundtrip postcondition:
 
